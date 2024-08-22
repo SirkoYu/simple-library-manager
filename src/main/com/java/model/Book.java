@@ -1,5 +1,7 @@
 package main.com.java.model;
 
+import java.util.Objects;
+
 public class Book {
     private String title;
     private String author;
@@ -12,6 +14,10 @@ public class Book {
         this.author = author;
         this.isbn = isbn;
         this.year = year;
+    }
+
+    public Book(String isbn){
+        this.isbn = Long.parseLong(isbn);
     }
 
     public String getTitle() {
@@ -49,5 +55,18 @@ public class Book {
     @Override
     public String toString() {
         return STR."Tittle: \{this.title}\nAuthor: \{this.author}\nISBN: \{this.isbn}\nYear: \{this.year}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return isbn == book.isbn;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(isbn);
     }
 }
