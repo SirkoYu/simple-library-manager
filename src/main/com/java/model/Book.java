@@ -1,8 +1,9 @@
 package main.com.java.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Book {
+public class Book implements Serializable {
     private String title;
     private String author;
     private long isbn;
@@ -57,7 +58,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return STR."Tittle: \{this.title}\nAuthor: \{this.author}\nISBN: \{this.isbn}\nYear: \{this.year}";
+        return STR."Tittle: \{this.title}\nAuthor: \{this.author}\nISBN: \{this.isbn}\nYear: \{this.year}\n";
     }
 
     @Override
