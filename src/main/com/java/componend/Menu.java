@@ -5,10 +5,11 @@ import main.com.java.Main;
 import java.io.IOException;
 
 public class Menu {
-    public String mainMenu = "1 - Add new book.\n"
-            + "2 - Remove exiting book.\n"
-            + "3 - Find books by title.\n"
-            + "4 - Show all books.";
+    public String mainMenu = """
+            1 - Add new book.
+            2 - Remove exiting book.
+            3 - Find books by title.
+            4 - Show all books.""";
 
     public void getOperation() throws IOException {
         System.out.print("Enter operation: ");

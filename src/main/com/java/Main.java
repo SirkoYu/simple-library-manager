@@ -19,20 +19,20 @@ public class Main {
         try {
             library = register.readLibrary();
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Can`t read binary file.");;
+            System.out.println("Can`t read binary file.");
         }
     }
 
     private static final Menu myMenu = new Menu();
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         if(Authenticator.auth()) {
             System.out.println("Login completed. ");
             System.out.println(myMenu.mainMenu);
-//            try {
+            try {
                 myMenu.getOperation();
-//            } catch (IOException e) {
-//                System.out.println("Output error.");
-//            }
+            } catch (IOException e) {
+                System.out.println("Output error.");
+            }
         }
     }
 }
