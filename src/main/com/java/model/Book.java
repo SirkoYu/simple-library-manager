@@ -8,12 +8,15 @@ public class Book {
     private long isbn;
 
     private short year;
+    public Book(){
 
-    public Book(String title, String author, long isbn, short year) {
+    }
+
+    public Book(String title, String author, String isbn, String  year) {
         this.title = title;
         this.author = author;
-        this.isbn = isbn;
-        this.year = year;
+        this.isbn = Long.parseLong(isbn);
+        this.year = Short.parseShort(year);
     }
 
     public Book(String isbn){
@@ -40,16 +43,16 @@ public class Book {
         return isbn;
     }
 
-    public void setIsbn(long isbn) {
-        this.isbn = isbn;
+    public void setIsbn(String isbn) {
+        this.isbn = Long.parseLong(isbn);
     }
 
     public short getYear() {
         return year;
     }
 
-    public void setYear(short year) {
-        this.year = year;
+    public void setYear(String year) {
+        this.year = Short.parseShort(year);
     }
 
     @Override
